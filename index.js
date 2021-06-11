@@ -1,6 +1,15 @@
 var tabLi = $("ul.tab_button li");
 var tabLiLength = tabLi.length;
 
+var newArray = [];
+var heightVar=0;
+for(var i=1;i<=tabLi.length;i++){
+    newArray.push(heightVar)
+    heightVar += $(".tab_"+i).outerHeight();
+}
+
+console.log(newArray)
+
 tabLi.on("click", function(){
     tabLiToggle($(this));
 
@@ -26,22 +35,18 @@ function scrollMove(seq){
 
 $(".tab_view").scroll(function(){
     var scrollVal = $(this).scrollTop();
-
-    
-    
-    
-    // if(){
-        
-        // }
+    if(newArray[0]<scrollVal && scrollVal<newArray[1]){
+        tabLiToggle(tabLi.eq(0))
+    }else if(newArray[1]<=scrollVal && scrollVal<newArray[2]){
+        tabLiToggle(tabLi.eq(1))
+    }else if(newArray[2]<=scrollVal && scrollVal<newArray[3]){
+        tabLiToggle(tabLi.eq(2))
+    }else if(newArray[3]<=scrollVal){
+        tabLiToggle(tabLi.eq(3))
+    }
 });
 
 
-var heightVar=0;
-for(var i=1;i<=tabLi.length;i++){
-    var newArray = [];
-    newArray.push(heightVar)
-    heightVar += $(".tab_"+i).outerHeight();
-    console.log(newArray)
-}
-newArray.push(1)
-console.log(newArray)
+
+
+
