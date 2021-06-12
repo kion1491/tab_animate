@@ -35,7 +35,7 @@ function scrollMove(seq){
 
 $(".tab_view").off("scroll").on("scroll", function () {
     var scrollVal = $(this).scrollTop();
-    if(newArray[0]<scrollVal && scrollVal<newArray[1]){
+    if(newArray[0]<=scrollVal && scrollVal<newArray[1]){
         tabLiToggle(tabLi.eq(0))
     }else if(newArray[1]<=scrollVal && scrollVal<newArray[2]){
         tabLiToggle(tabLi.eq(1))
