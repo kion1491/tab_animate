@@ -9,11 +9,11 @@ for(var i=1;i<=tabLi.length;i++){
     heightVar += $(".tab_"+i).outerHeight();
 }
 
-tabLi.on("click", function () {
-    setTimeout(function(){
-        tabLiToggle($(this));
-    }, delayTime)
-})
+// tabLi.on("click", function () {
+//     setTimeout(function(){
+//         tabLiToggle($(this));
+//     }, delayTime)
+// })
 
 function tabLiToggle(target){
     tabLi.removeClass("on")
